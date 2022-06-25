@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "What do you want to scan: subnet/IP"
+echo "What do you want to scan? (subnet/IP):"
 read use
 
 if [ "$use" = "subnet" ]; then 
@@ -12,7 +12,7 @@ read port
 
 nmap =p $port -sT $subnet -oG res
 
-cat res |grep open >result
+cat res | grep open > result
 cat result
 
 else
